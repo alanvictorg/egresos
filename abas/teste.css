@@ -1,0 +1,22 @@
+#global{
+	width:900px;
+	margin:0 auto; /* Centraliza horizontalmente */
+	background-color:#FFF;
+}
+/* Estilos das abas de opções */
+.aba_esq	{ background: url(png/esq_nao_sel.png) no-repeat; width: 3px; height: 19px; float:left; }
+.aba_meio	{ background: url(png/meio_nao_sel.png) repeat-x; height: 21px; float:left; }
+.aba_dir	{ background: url(png/dir_nao_sel.png) no-repeat; width: 3px; height: 19px; float:left; }
+
+.aba_esq_sel	{ background: url(png/esq_sel.png) no-repeat; width: 3px; height: 21px; float:left; }
+.aba_meio_sel	{ background: url(png/meio_sel.png) repeat-x; height: 21px; float:left; }
+.aba_dir_sel	{ background: url(png/dir_sel.png) no-repeat; width: 3px; height: 21px; float:left; }
+
+.opcao		{ height: 19px; float:left; padding-right:2px; vertical-align:bottom; }
+.opcoes		{ height: 23px; width:1000px; vertical-align:bottom; }
+
+#informacoes_bic{
+	clear:both;
+	width:900px;
+	border: solid 1px #999999;
+}

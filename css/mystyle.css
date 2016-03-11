@@ -1,0 +1,60 @@
+#titulo{
+	margin-right: 80px;
+	top: 50px;
+  	text-align: center;
+}
+
+#nome_egresso{
+	text-align: center;
+}
+
+.logo{
+	float: left;
+	width: 90px;
+	height: 90px;
+}
+
+.data_formulario{
+	margin-right: 0.5cm;
+	text-align: right;
+}
+
+strong{
+ 	font-weight: bold;
+}
+
+.alinhar-direita{
+	text-align: right;
+}
+.pergunta{
+	width: 67%;
+	font-weight: bold;
+	border: 1px solid #ffffff; 
+	float: left;
+	margin: 2px;
+	padding: 0px;
+}
+
+
+.perguntaMenor{
+	width: 30%;
+	font-weight: bold;
+	border: 1px solid #ffffff;
+	float: left;
+	
+}
+
+.respostaMaior{
+	width: 68%;
+	border: 1px solid #ffffff; 
+	text-align: right;
+	float: right;		
+}
+
+.resposta{
+	width: 29%;
+	border: 1px solid #ffffff; 
+	float: right;
+	text-align: right;
+	padding: 0px;
+}

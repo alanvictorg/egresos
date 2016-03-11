@@ -1,0 +1,139 @@
+img {
+	max-width:100%;
+	height:auto;
+}
+
+.container-fluid {
+  /*max-width: 960px; */
+  .center-block();
+  
+}
+
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+/*  background-color: #eee; */
+  background-color: linear-gradient(to bottom,rgba(55,107,176,1) 0,rgba(83,149,200,1) 100%);
+}
+
+ .tabela{
+   background:#fff;
+   width:50%;
+   padding:0px;
+   border:1px solid #f0f0f0;
+   float:left;
+   margin-right:20px;
+   }
+   .td{
+   background:#f8f8f8;
+   width:20px;
+   height:20px;
+   text-align:center;
+   
+   }
+   .hj{
+   background: #FFFFCC;
+   width:20px;
+   height:20px;
+   text-align:center;
+   }
+   .dom{
+   background: #FFCC99;
+   width:20px;
+   height:20px;
+   text-align:center;
+   }
+  
+
+   .linha{
+   background:#404040;
+   width:300px;
+   height:20px;
+   text-align:left;
+   font-size:11px;
+   color:#f0f0f0;
+   padding:1px 1px 1px 10px;
+   }
+   .mes{
+   background: #ECE6D9;
+   width:auto;
+   height:20px;
+   text-align:center;
+   font-size:12px;
+   font-weight:bold;
+   font-family:Verdana;
+   }
+   body,td,th {
+     font-family: Verdana;
+     font-size: 11px;
+     color: #000000;
+   }
+   a:link {
+     color: #000000;
+     text-decoration: none;
+   }
+   a:visited {
+     text-decoration: none;
+     color: #000000;
+   }
+   a:hover {
+     text-decoration: underline;
+     color: #FF9900;
+   }
+   a:active {
+     text-decoration: none;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form-signin {
+  max-width: 330px;
+/*  padding: 15px; */
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  margin: 2px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#botoes {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

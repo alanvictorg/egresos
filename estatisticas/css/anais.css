@@ -1,0 +1,13 @@
+.caption {
+	font-size: 1.25rem;
+	font-weight: 300;
+	margin-bottom: 30px;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+nav {
+	height: 94px;
+}
