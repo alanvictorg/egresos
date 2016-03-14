@@ -13,7 +13,6 @@ include("../controle/lib/config.php");
 
 $consultaFormulariosAluno = "SELECT * FROM  formulario";
 
-t
 $resultadoFormulariosAluno = mysql_query($consultaFormulariosAluno);
  
 $formularioMaisDeUmAno = "SELECT
@@ -101,7 +100,7 @@ $resultadoMaisRecente = mysql_fetch_array($consultaMaisRecente)
                     </h1>
 
 
-                       <?php 
+                     <!--  <?php 
                       
                        
          
@@ -197,49 +196,121 @@ $resultadoMaisRecente = mysql_fetch_array($consultaMaisRecente)
                        
                       // }
                        
-                       ?>
-   
+                       ?>-->
+                           
 
 
 
 <?php
- 
+                          
+
+
+
                        if(empty($_GET['data'])){//navegaçao entre os meses
                            $day = date('d');
                            $month = date('n');
                            $year = date('Y');
-                          // $months=array('January','February','March','April','May','June','July','August','September','October','November','December');
+                           $months=array('Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro');
                        }else{
                            $data = explode('/',$_GET['data']);//nova data
                            $day = $data[0];
                            $month = $data[1];
                            $year = $data[2];
+                           $months=array('Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro');
                        }
 
+                       
+                           $year_ant = $year - 1;
+                           $year_prox = $year + 1; 
 
-echo '<table border=0 width=700>';
-echo '<th colspan=4 align=center style="font-family:Verdana; font-size:18pt; color:#ff9900;">'.$year.'</th>';
-for ($reihe=1; $reihe<=3; $reihe++) {
+echo '<table class="tabela">';
+//echo '<th colspan=4 align=center style="font-family:Verdana; font-size:18pt; color:#ff9900;">'.$year.'</th>';
+                           print '<tr >';
+                           print '<td class="mes"><a href="?data='.$day.'/'.$month.'/'.$year_ant.'" title="Ano anterior">  &laquo; </a></td>';/*mês anterior*/
+                           print '<td class="mes" colspan="2">'.$ano.'</td>';/*mes atual e ano*/
+                           print '<td class="mes"><a href="?data='.$day.'/'.$month.'/'.$year_prox.'" title="Próximo Ano">  &raquo; </a></td>';/*Proximo mês*/
+                           print '</tr>';
+for ($fila=1; $fila<=3; $fila++) {
 echo '<tr>';
-for ($spalte=1; $spalte<=4; $spalte++) {
-$this_month=($reihe-1)*4+$spalte;
-$erster=date('w',mktime(0,0,0,$this_month,1,$year));
-$insgesamt=date('t',mktime(0,0,0,$this_month,1,$year));
-if ($erster==0) $erster=7;
+
+for ($coluna=1; $coluna<=4; $coluna++) {
+$esse_mes=($fila-1)*4+$coluna;
+$primeiro=date('w',mktime(0,0,0,$esse_mes,1,$year));
+$global=date('t',mktime(0,0,0,$esse_mes,1,$year));
+if ($primeiro==0) $primeiro=7;
 echo '<td width="25%" valign=top>';
+
 echo '<table border=0 align=center style="font-size:8pt; font-family:Verdana">';
-echo '<th colspan=7 align=center style="font-size:12pt; font-family:Arial; color:#666699;">'.$months[$this_month-1].'</th>';
+echo '<th colspan=7 align=center style="font-size:12pt; font-family:Arial; color:#666699;">'.$months[$esse_mes-1].'</th>';
+
+
+
+
+
+
 
 
 echo '<tr><br>';
 $i=1;
-while ($i<$erster) {
+while ($i<$primeiro) {
 echo '<td> </td>';
 $i++;
 }
 
 echo '</tr>';
+
 echo '</table>';
+
+
+if($months[$esse_mes-1]== 'Janeiro'){
+  $mes1 = "01";
+}elseif ($months[$esse_mes-1]=='Fevereiro') {
+  $mes1 = "02";
+}elseif ($months[$esse_mes-1]=='Março') {
+  $mes1 = "03";
+}elseif ($months[$esse_mes-1]=='Abril') {
+  $mes1 = "04";
+}elseif ($months[$esse_mes-1]=='Maio') {
+  $mes1 = "05";
+}elseif ($months[$esse_mes-1]=='Junho') {
+  $mes1 = "06";
+}elseif ($months[$esse_mes-1]=='Julho') {
+  $mes1 = "07";
+}elseif ($months[$esse_mes-1]=='Agosto') {
+  $mes1 = "08";
+}elseif ($months[$esse_mes-1]=='Setembro') {
+  $mes1 = "09";
+}elseif ($months[$esse_mes-1]=='Outubro') {
+  $mes1 = "10";
+}elseif ($months[$esse_mes-1]=='Novembro') {
+  $mes1 = "11";
+}elseif ($months[$esse_mes-1]=='Dezembro') {
+  $mes1 = "12";
+}
+                  
+                 $dtevento = $year."-".$mes1;
+                
+                 $sqlag = mysql_query("SELECT * FROM formulario WHERE formulario.criado_em like '%$dtevento%'") or die(mysql_error());
+                         $num = mysql_num_rows($sqlag);
+                        
+             
+                   print '<p align="center">'.$num.' Formulários(s)<br></p>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 echo '</td>';
 }
 echo '</tr>';
@@ -275,3 +346,35 @@ echo '</table>';
         </script>
     </body>
 </html>
+
+
+
+
+
+<!--
+
+if($months[$esse_mes-1]== 'January'){
+  $mes1 = '01';
+}elseif ($months[$esse_mes-1]=='February') {
+  $mes1 = '02';
+}elseif ($months[$esse_mes-1]=='March') {
+  $mes1 = '03';
+}elseif ($months[$esse_mes-1]=='April') {
+  $mes1 = '04';
+}elseif ($months[$esse_mes-1]=='May') {
+  $mes1 = '05';
+}elseif ($months[$esse_mes-1]=='June') {
+  $mes1 = '06';
+}elseif ($months[$esse_mes-1]=='July') {
+  $mes1 = '07';
+}elseif ($months[$esse_mes-1]=='August') {
+  $mes1 = '08';
+}elseif ($months[$esse_mes-1]=='September') {
+  $mes1 = '09';
+}elseif ($months[$esse_mes-1]=='October') {
+  $mes1 = '10';
+}elseif ($months[$esse_mes-1]=='November') {
+  $mes1 = '11';
+}elseif ($months[$esse_mes-1]=='December') {
+  $mes1 = '12';
+}-->
